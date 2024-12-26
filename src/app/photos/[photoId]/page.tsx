@@ -13,7 +13,7 @@ export default async function PhotoDetailsPage({ params }: { params: { photoId: 
   const photo = await getPhotoData(params.photoId);
 
   return (
-    <main className="p-8 bg-gradient-to-br from-indigo-300 via-purple-300 to-pink-300 min-h-screen">
+    <div className="p-8 bg-gradient-to-br from-indigo-300 via-purple-300 to-pink-300 min-h-screen">
     <div className="bg-white p-6 rounded-lg shadow-xl max-w-3xl mx-auto">
       <h1 className="text-4xl font-bold mb-6 text-center text-indigo-800">
         {photo.title}
@@ -49,6 +49,6 @@ export default async function PhotoDetailsPage({ params }: { params: { photoId: 
         </Link>
       </div>
     </div>
-  </main>  
+  </div>  
   );
 }
