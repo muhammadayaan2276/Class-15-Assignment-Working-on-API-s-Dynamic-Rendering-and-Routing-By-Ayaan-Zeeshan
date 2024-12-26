@@ -33,14 +33,12 @@ export default async function PhotoDetailsPage({ params }: { params: { photoId: 
       </p>
   
       {/* Thumbnail Section */}
-      <div className="mb-6 text-center">
-        <p className="mb-2 font-semibold text-gray-800">Thumbnail:</p>
-        <img
-          src={photo.thumbnailUrl}
-          alt={`Thumbnail of ${photo.title}`}
-          className="rounded-lg shadow-lg mx-auto border-2 border-gray-300"
-        />
-      </div>
+      <p className="mb-4 text-gray-500">
+        <strong className="text-red-600">ThumbnailUrl:</strong>{" "}
+        <a href={photo.thumbnailUrl} className="text-blue-600 underline hover:text-blue-800" target="_blank" rel="noopener noreferrer">
+          {photo.thumbnailUrl}
+        </a>
+      </p>
   
       {/* Back Button */}
       <div className="flex justify-center mt-8">
