@@ -3,6 +3,9 @@ import Link from "next/link";
 // Fetch single photo details
 async function getPhotoData(photoId: string) {
   const res = await fetch(`https://jsonplaceholder.typicode.com/photos/${photoId}`);
+if (!res.ok) {
+  throw new Error("Failed to fetch photo data");
+}
   return res.json();
 }
 
@@ -10,7 +13,7 @@ export default async function PhotoDetailsPage({ params }: { params: { photoId: 
   const photo = await getPhotoData(params.photoId);
 
   return (
-    <div className="p-8 bg-gradient-to-br from-indigo-300 via-purple-300 to-pink-300 min-h-screen">
+    <div className="p-8 bg-gradient-to-br from-green-400 via-red-400 to-pink-400 min-h-screen">
     <div className="bg-white p-6 rounded-lg shadow-xl max-w-3xl mx-auto">
       <h1 className="text-4xl font-bold mb-6 text-center text-indigo-800">
         {photo.title}
