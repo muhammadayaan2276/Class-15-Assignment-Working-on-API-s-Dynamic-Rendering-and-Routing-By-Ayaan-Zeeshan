@@ -3,9 +3,6 @@ import Link from "next/link";
 // Fetch single photo details
 async function getPhotoData(photoId: string) {
   const res = await fetch(`https://jsonplaceholder.typicode.com/photos/${photoId}`);
-  if (!res.ok) {
-    throw new Error("Failed to fetch photo data");
-  }
   return res.json();
 }
 
